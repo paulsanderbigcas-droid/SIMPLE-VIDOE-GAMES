@@ -1,0 +1,168 @@
+:root {
+  --bg: #10131a;
+  --surface: #171b26;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #7dd3fc;
+  --hp: #6ee7b7;
+  --hp-low: #f87171;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.shell {
+  width: 100%;
+  max-width: 920px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.hud {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.7rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hud-group,
+.hud-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.05rem;
+  flex-wrap: wrap;
+}
+
+.hud-actions {
+  gap: 0.5rem;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.val {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.hp-wrap {
+  width: 92px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.hp-fill {
+  width: 100%;
+  height: 100%;
+  background: var(--hp);
+  transition: width 0.14s linear, background-color 0.2s ease;
+}
+
+.btn {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.btn.primary {
+  background: rgba(125, 211, 252, 0.16);
+  border-color: rgba(125, 211, 252, 0.35);
+  color: var(--accent);
+  padding: 0.7rem 1.35rem;
+  font-size: 0.95rem;
+}
+
+.btn.primary:hover {
+  background: rgba(125, 211, 252, 0.24);
+}
+
+.stage-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 880 / 500;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: #131824;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  cursor: crosshair;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 19, 26, 0.86);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.overlay h1 {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  letter-spacing: -0.02em;
+}
+
+.overlay p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  max-width: 60ch;
+}
+
+.controls-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+}

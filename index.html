@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rooftop Drift — 500m Bosses</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="hud">
+      <div class="hud-group">
+        <div class="stat">
+          <span class="label">HP</span>
+          <div class="hp-wrap">
+            <div class="hp-fill" id="hpFill"></div>
+          </div>
+          <span class="val" id="hpText">100</span>
+        </div>
+        <div class="stat">
+          <span class="label">Distance</span>
+          <span class="val" id="distText">0m</span>
+        </div>
+        <div class="stat">
+          <span class="label">Best</span>
+          <span class="val" id="bestText">0m</span>
+        </div>
+        <div class="stat">
+          <span class="label">Gems</span>
+          <span class="val" id="gemsText">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Score</span>
+          <span class="val" id="scoreText">0</span>
+        </div>
+      </div>
+      <div class="hud-actions">
+        <button class="btn" id="pauseBtn" type="button">Pause (P)</button>
+        <button class="btn" id="restartBtn" type="button">Restart</button>
+      </div>
+    </header>
+
+    <main class="stage-wrap">
+      <canvas id="gameCanvas" width="880" height="500"></canvas>
+
+      <div class="overlay" id="overlay">
+        <h1>Rooftop Drift</h1>
+        <p>
+          <strong>A / D</strong> or <strong>← / →</strong> to run · <strong>W / ↑ / Space</strong> to jump &amp; double-jump (wall-slide &amp; wall-jump).<br />
+          <strong>J</strong> or <strong>Left-Click</strong> to <strong>Slash</strong> · <strong>K</strong> or <strong>Right-Click</strong> to fire a <strong>Pulse Bolt</strong>.<br />
+          Survive the rooftops, collect <strong>gems</strong>, and defeat a <strong>Boss every 500m</strong>!
+        </p>
+        <button class="btn primary" id="startBtn" type="button">Start Run</button>
+      </div>
+    </main>
+
+    <footer class="controls-note">
+      Every 500m brings a rooftop boss fight—jump shockwaves, dodge or slash orbs, and claim the gem reward.
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
